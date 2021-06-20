@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: monospace;
+      }
+
+      .section-2-content,
+      .section-3-content {
+        display: flex;
+      }
+
+      .article-container {
+        contain: layout inline-size style;
+        flex: 1 1 auto;
+      }
+
+      article {
+        padding: 15px;
+        display: grid;
+        grid-template-areas: "image title" "image text";
+        grid-auto-columns: auto 1fr;
+        grid-gap: 0 2rem;
+      }
+
+      .fake-image {
+        width: 400px;
+        height: 200px;
+        background-color: darkseagreen;
+        grid-area: image;
+      }
+
+      article h2 {
+        grid-area: title;
+        margin: 0 0 0.5rem;
+        font-size: 2rem;
+      }
+
+      article p {
+        grid-area: text;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      @container (max-width: 600px) {
+        article {
+          grid-auto-columns: minmax(200px, 45%) 1fr;
+        }
+
+        .fake-image {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 2 / 3;
+          background-color: lightblue;
+        }
+
+        article h2 {
+          font-size: 1.6rem;
+        }
+
+        article p {
+          font-size: 0.9rem;
+        }
+      }
+
+      @container (max-width: 400px) {
+        article {
+          grid-template-areas: "title" "image" "text";
+          grid-auto-columns: 1fr;
+        }
+
+        .fake-image {
+          aspect-ratio: 3 / 2;
+          background-color: lightcoral;
+        }
+
+        article h2 {
+          font-size: 1.8rem;
+        }
+
+        article p {
+          font-size: 1rem;
+          margin-top: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="section-1">
+        <h1>Large</h1>
+
+        <div class="article-container">
+          <article>
+            <div class="fake-image"></div>
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+              exercitationem laborum neque nesciunt nihil nobis non pariatur
+              perferendis qui reiciendis, similique veritatis vero voluptates.
+              Ad culpa doloribus fugiat rerum sit. Autem ea ex facilis maiores
+              natus quae qui ratione, reiciendis soluta vitae. Alias aut
+              consectetur cupiditate delectus distinctio modi quae voluptas.
+              Aliquam aliquid doloremque minus nobis. Architecto consequatur
+              officia perspiciatis quae quam quasi vel velit? Aliquid aspernatur
+              assumenda autem consectetur, doloribus, harum in magni mollitia
+              natus nobis praesentium quaerat sequi suscipit. Ab alias
+              assumenda, ex id magnam perferendis placeat possimus quasi quos
+              vero! Corporis dolore provident tempora, tempore ut veniam?
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="section-2">
+        <h1>Medium</h1>
+
+        <div class="section-2-content">
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus aperiam aut cumque cupiditate debitis deleniti dolores
+                doloribus dolorum ea eligendi et exercitationem facere fuga hic
+                ipsa ipsum iste iure laudantium libero minima necessitatibus
+                nobis officia officiis pariatur qui quidem recusandae repellat
+                repellendus repudiandae saepe sed sint sit, soluta vel
+                voluptatum?
+              </p>
+            </article>
+          </div>
+
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Doloribus ipsa ipsam officiis perferendis porro? Ab, animi
+                assumenda, autem cupiditate debitis dolorem doloribus earum eius
+                eos laboriosam libero maxime numquam perspiciatis, provident
+                quas quibusdam reiciendis reprehenderit rerum tempora ullam! A
+                accusamus architecto at dolor, iusto praesentium quis quo ut
+                veniam voluptate.
+              </p>
+            </article>
+          </div>
+
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+                esse id libero optio quos ratione recusandae repellat. At
+                blanditiis culpa esse excepturi iusto necessitatibus placeat?
+                Dolorem, earum hic iure laudantium nihil perspiciatis saepe
+                tempore ut? Expedita maiores sit tempora voluptatibus. Debitis
+                et ipsa magni molestias, qui quia quos ratione repellendus.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="section-3">
+        <h1>Small</h1>
+
+        <div class="section-3-content">
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aspernatur, molestiae!
+              </p>
+            </article>
+          </div>
+
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Maiores, rerum!
+              </p>
+            </article>
+          </div>
+
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consequatur, quasi?
+              </p>
+            </article>
+          </div>
+
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,
+                sapiente.
+              </p>
+            </article>
+          </div>
+
+          <div class="article-container">
+            <article>
+              <div class="fake-image"></div>
+              <h2>Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
+                vel.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
