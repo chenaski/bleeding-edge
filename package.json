@@ -2,8 +2,10 @@
   "name": "bleeding-edge",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "start:sse": "npx nodemon server-sent-events",
     "format": "prettier -wu ."
   },
   "keywords": [],
